@@ -4,9 +4,6 @@ import '../Form.css';
 import Box from './Box';
 import { calculation } from '../backend/CompoundInterestCalculation';
 
-// const v = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-const v = [1, 2, 3, 4, 5];
-
 export default function Form() {
   const [initialAmount, setInitialAmount] = useState(1000);
   const [interestRate, setInterestRate] = useState(0.5);
@@ -62,7 +59,10 @@ export default function Form() {
         {array.map((item) => (
           <Box key={item}>
             <span>Mês {item + 1}:</span>
-            <p>R$ tanto</p>
+            <p>
+              R$ {initialAmount} com R$ {interestRate}
+            </p>
+            <p>Resultado: R$ {calculation(initialAmount, interestRate)}</p>
           </Box>
         ))}
       </div>
