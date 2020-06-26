@@ -1,4 +1,22 @@
+.Form {
+  display: inline-grid;
+  justify-items: center;
+
+  /* align-items: center;
+  align-content: center;
+  text-align: center;
+  vertical-align: center; */
+}
+
 .Inputs {
+  align-items: center;
+  padding: 15px;
+  /* text: */
+  font-size: 15px;
+  width: 600px;
+  /* margin: 50px; */
+  padding-top: 40px;
+  border: 1px solid lightgray;
   /* display: flex; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -8,27 +26,36 @@
   grid-gap: 1px 18px;
   /* margem interna que afasta os elementos da borda do grid: */
   /* padding: 20px 10px; */
+}
 
-  /* text: */
+.Boxes {
   font-size: 15px;
-  width: 600px;
-  /* margin: 0 auto; */
-  /* padding-top: 40px; */
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.Box {
+  background: rgb(255, 94, 0);
+  margin: 10px;
+  flex: 0;
+  padding: 10px;
+  border: 1px solid white;
+  /* flex-basis: 20%; */
 }
 
 /* ABAIXO = INPUT FLUTUANTE: */
 
-.meu-box {
-  position: relative;
-}
-
 .input {
+  text-align: center;
+
   width: 100%;
   position: relative;
-  /* font-size: 16px; */
+  font-size: 16px;
   color: #5b5b5b;
   border: 1px green solid;
-  /* padding: 10px 10px 10px 15px; */
   box-sizing: content-box;
   /* z-index: 1; */
 }
@@ -41,10 +68,7 @@
 
   color: rgb(108, 0, 197);
   font-weight: bold;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: -35%;
   transition: 0.1s;
 }
 
@@ -53,6 +77,6 @@
   margin-top: 0px;
   top: -70%;
   /* z-index: 2; */
-  transition: 0.2s;
+  transition: 0.3s;
   color: rgb(243, 220, 11); /* teste */
 }

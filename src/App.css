@@ -3,18 +3,19 @@
 }
 
 .App-header {
-  background-color: #480fb1;
+  background-color: #6f00ff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: calc(5px + 2vmin);
   color: white;
 }
 
 h1 {
   color: #ffffff;
+  padding: 15px;
   font-family: 'Raleway', sans-serif;
   /* font-size: 62px; */
   font-weight: 800;

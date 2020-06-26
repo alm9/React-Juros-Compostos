@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function Input({ id, foco, label }) {
+export default function Input({ id, foco, label, step }) {
   return (
     <div>
       <input
         className="input"
         id={id}
         type="number"
-        step="1"
+        step={step}
         autoFocus={foco}
         placeholder={label}
       />
