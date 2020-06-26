@@ -30,6 +30,8 @@ export default function Form() {
     return;
   };
 
+  const array = Array.from({ length: qttMonths }, (v, i) => i);
+
   return (
     // <div className="container">
     <div className="Form">
@@ -46,6 +48,7 @@ export default function Form() {
           id={'inputTaxaJuros'}
           foco={false}
           label={'Taxa de juros mensal'}
+          step={0.1}
           onChangeInput={handleChangeInterestRate}
         />
         <Input
@@ -56,9 +59,9 @@ export default function Form() {
         />
       </div>
       <div className="Boxes">
-        {v.map((item) => (
+        {array.map((item) => (
           <Box key={item}>
-            <span>Mês {item}:</span>
+            <span>Mês {item + 1}:</span>
             <p>R$ tanto</p>
           </Box>
         ))}
