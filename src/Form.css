@@ -1,19 +1,16 @@
 .Form {
   display: inline-grid;
   justify-items: center;
-
-  /* align-items: center;
-  align-content: center;
-  text-align: center;
-  vertical-align: center; */
 }
 
 .Inputs {
   align-items: center;
-  padding: 15px;
+  padding: 5%;
+  /* padding: 15px; */
   /* text: */
-  font-size: 15px;
-  width: 600px;
+  font-size: 12px;
+  width: 80%;
+  /* width: 600px; */
   /* margin: 50px; */
   padding-top: 40px;
   border: 1px solid lightgray;
@@ -21,7 +18,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* altura das linhas: */
-  grid-auto-rows: 100px;
+  grid-auto-rows: 150%;
   /* espaço entre um elemento interno e outro: */
   grid-gap: 1px 18px;
   /* margem interna que afasta os elementos da borda do grid: */
@@ -29,18 +26,24 @@
 }
 
 .Boxes {
-  font-size: 15px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-items: center;
   align-items: center;
+  font-size: 50%;
+  /* font-size: 15px; */
+  /* margin-top: 20px; */
+  display: flex;
+  width: 90%;
+  /* margin: auto; */
+  justify-content: center;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  /* align-items: center; */
 }
 
 .Box {
   background: rgb(255, 94, 0);
   margin: 10px;
-  flex: 0;
+  /* flex: 0; */
   padding: 10px;
   border: 1px solid white;
   /* flex-basis: 20%; */
@@ -61,7 +64,7 @@
 }
 
 .label-nome {
-  width: 100%;
+  /* width: 100%; */
   /* position: absolute; */
   position: relative;
   visibility: hidden;
@@ -74,7 +77,7 @@
 
 .input:focus + .label-nome {
   visibility: visible;
-  margin-top: 0px;
+  /* margin-top: 0px; */
   top: -70%;
   /* z-index: 2; */
   transition: 0.3s;
