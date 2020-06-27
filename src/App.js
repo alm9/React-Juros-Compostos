@@ -11,6 +11,7 @@ function App() {
         <div className="Form">
           <Form />
         </div>
+        <span className="Author">By André Machado 😉</span>
       </header>
     </div>
   );

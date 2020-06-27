@@ -25,6 +25,17 @@ h1 {
   text-transform: uppercase;
 }
 
+.Author {
+  font-size: 30px;
+  letter-spacing: -1px;
+  color: #dfbf84;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #000;
+  margin: 10px 0 24px;
+  text-align: center;
+  line-height: 50px;
+}
+
 .Form {
   color: #ffffff;
   font-family: 'Raleway', sans-serif;
