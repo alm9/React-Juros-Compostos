@@ -1,33 +1,41 @@
 import React, { useState } from 'react';
 import Input from './Input';
 import '../Form.css';
-import Box from './Box';
-import { calculation } from '../backend/CompoundInterestCalculation';
+import {
+  calculation,
+  sub,
+  percent,
+} from '../backend/CompoundInterestCalculation';
+import {
+  formatMoney,
+  formatPercentage,
+  formatBalance,
+} from '../helpers/formatters';
 
 export default function Form() {
-  const [initialAmount, setInitialAmount] = useState(1000);
-  const [interestRate, setInterestRate] = useState(0.5);
-  const [qttMonths, setQttMonths] = useState(1);
+  const [initialAmount, setInitialAmount] = useState(5000);
+  const [interestRate, setInterestRate] = useState(0.01);
+  const [qttMonths, setQttMonths] = useState(6);
+
+  const array = Array.from({ length: qttMonths }, (v, i) => i);
 
   const handleChangeAmount = (value) => {
     setInitialAmount(value);
-    console.log('Montante inicial alterado = ' + value);
+    console.log('Montante = ' + value);
     return;
   };
 
   const handleChangeInterestRate = (value) => {
     setInterestRate(value);
-    console.log('Taxa de juros alterado = ' + value);
+    console.log('Juros = ' + value);
     return;
   };
 
   const handleQttMonths = (value) => {
     setQttMonths(value);
-    console.log('Quantidade de meses alterada = ' + value);
+    console.log('Meses = ' + value);
     return;
   };
-
-  const array = Array.from({ length: qttMonths }, (v, i) => i);
 
   return (
     // <div className="container">
@@ -57,13 +65,16 @@ export default function Form() {
       </div>
       <div className="Boxes">
         {array.map((item) => (
-          <Box key={item}>
+          <div className="Box" key={item}>
             <span>Mês {item + 1}:</span>
             <p>
-              R$ {initialAmount} com R$ {interestRate}
+              {formatMoney(calculation(initialAmount, interestRate, item + 1))}
             </p>
-            <p>Resultado: R$ {calculation(initialAmount, interestRate)}</p>
-          </Box>
+            <p>{formatBalance(sub(initialAmount, interestRate, item + 1))}</p>
+            <p>
+              {formatPercentage(percent(initialAmount, interestRate, item + 1))}
+            </p>
+          </div>
         ))}
       </div>
     </div>
